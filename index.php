@@ -6,7 +6,7 @@
 
 <?php
 
-$file_handle = fopen("input.txt", "r");
+$file_handle = fopen("data.txt", "r");
 
 $file_handle1 = fopen("output1.txt", "w");
 $ctr=0;

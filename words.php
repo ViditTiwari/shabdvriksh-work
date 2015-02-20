@@ -6,7 +6,7 @@
 
 <?php
 
-$file_handle = fopen("words_input.txt", "r");
+$file_handle = fopen("output1.txt", "r");
 
 $file_handle1 = fopen("words_output.txt", "w");
 $ctr=0;
@@ -17,6 +17,8 @@ while (!feof($file_handle)) {
 	}
    $line = fgets($file_handle);
    $line = preg_replace('/([|].*)/', "", $line);
+  $line = preg_replace('/( )/', ":", $line);
+
    
    echo $line;
    echo '<br>';
