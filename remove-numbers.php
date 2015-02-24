@@ -6,9 +6,9 @@
 
 <?php
 
-$file_handle = fopen("data.txt", "r");
+$file_handle = fopen("sample-input.txt", "r");
 
-$file_handle1 = fopen("output1.txt", "w");
+$file_handle1 = fopen("sample-output.txt", "w");
 $ctr=0;
 while (!feof($file_handle)) {
 	if($ctr>0)

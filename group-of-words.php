@@ -6,28 +6,21 @@
 
 <?php
 
-$file_handle = fopen("words_output.txt", "r");
+$file_handle = fopen("sample-output.txt", "r");
 
-$file_handle1 = fopen("only_word.txt", "w");
-$ctr=0;
+$file_handle1 = fopen("sample-output-group-of-words.txt", "w");
+
 while (!feof($file_handle)) {
-  if($ctr>0)
-  {
-    fwrite($file_handle1, "");
-  }
+	
    $line = fgets($file_handle);
-   $line = preg_replace('/[:]/',"\n", $line);
-   //$line = preg_replace("/[\n]/", ',', $line);
+   $line = preg_replace('/([|].*)/', "", $line);
+  $line = preg_replace('/( )/', ":", $line);
 
    
-   //$line = ltrim($line);
-   //$line = preg_replace('/\s+/', ' ', $line);
-   
-
    echo $line;
    echo '<br>';
    fwrite($file_handle1, $line) or die("Could not write to file");
-  $ctr++;
+  
    
    
 }
